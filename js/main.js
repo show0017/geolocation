@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
       canvas.height = 400;
       canvas.id = "canvas-map";
 
-      document.querySelector(".wrapper").appendChild(canvas);
+      document.querySelector("#output").appendChild(canvas);
 
   }else{
     //browser does not support geolocation api
@@ -31,6 +31,12 @@ function reportPosition( position ){
         console.debug("image has been loaded");
         context.drawImage(img, 0, 0);
         console.debug("image has been drawn on canvas");
+
+        var info = document.createElement("p");
+        info.innerHTML += "Latitude: " + position.coords.latitude + "&deg;<br/>"
+            + "Longitude: " + position.coords.longitude + "&deg;<br/>";
+
+        document.querySelector("#output").appendChild(info);
     }
 
     // Set source path

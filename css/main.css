@@ -1,4 +1,15 @@
+body{
+    color: white;
+}
 .wrapper{
-    width: 400px;
+    min-width: 400px;
+    max-width: 960px;
     margin: 0 auto;
+    background-color: black;
+}
+
+#output{
+    width: 500px;
+    margin: 0 auto;
+    outline: 1px solid red;
 }
